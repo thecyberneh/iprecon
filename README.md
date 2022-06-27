@@ -1,7 +1,7 @@
 # iprecon
 Small script for automation of IP Recon
 
-##Pre Configuration
+# Pre Configuration
 Configure Shodan with your API
 
 **Install RustScan**
