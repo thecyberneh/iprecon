@@ -19,7 +19,7 @@ printf ""$by"
 '####: ##:::::::: ##:::. ##: ########:. ######::. #######:: ##::. ##:
 ....::..:::::::::..:::::..::........:::......::::.......:::..::::..:: 
                                        
-        V1.0
+        V1.1.0
         Coded By Neh Patel with Love <3 ❤ 
                                                                          
                                                                                      
@@ -55,4 +55,5 @@ echo -e "$by"[INFO] Ready for rustscan with file: forRust.txt "$bye"
 echo -e "\n"
 rustscan -a forRust.txt -r 1-65535 | grep Open | tee open_ports.txt 
 echo -e "$by"[INFO] Ready for nuclei with file: open_ports.txt "$bye"
-cat open_ports.txt | sed 's/Open //' | httpx -silent | nuclei -t ~/nuclei-templates/
+cat open_ports.txt | sed 's/Open //' | httpx -silent | tee IPUrls.txt
+nuclei -l IPUrls.txt -t /root/nuclei-templates/ | IPNucleiResults.txt
