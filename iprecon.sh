@@ -54,6 +54,9 @@ echo -e "\n"
 echo -e "$by"[INFO] Ready for rustscan with file: forRust.txt "$bye"
 echo -e "\n"
 rustscan -a forRust.txt -r 1-65535 | grep Open | tee open_ports.txt 
+echo -e "\n"
 echo -e "$by"[INFO] Ready for nuclei with file: open_ports.txt "$bye"
+echo -e "\n"
 cat open_ports.txt | sed 's/Open //' | httpx -silent | tee IPUrls.txt
+echo -e "\n"
 nuclei -l IPUrls.txt -t /root/nuclei-templates/ | tee IPNucleiResults.txt
