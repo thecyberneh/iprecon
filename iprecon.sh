@@ -56,4 +56,4 @@ echo -e "\n"
 rustscan -a forRust.txt -r 1-65535 | grep Open | tee open_ports.txt 
 echo -e "$by"[INFO] Ready for nuclei with file: open_ports.txt "$bye"
 cat open_ports.txt | sed 's/Open //' | httpx -silent | tee IPUrls.txt
-nuclei -l IPUrls.txt -t /root/nuclei-templates/ | IPNucleiResults.txt
+nuclei -l IPUrls.txt -t /root/nuclei-templates/ | tee IPNucleiResults.txt
