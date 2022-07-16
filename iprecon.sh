@@ -40,7 +40,7 @@ echo -e "\n"
 echo -e "$rl"[CRITICAL]"$rle" "$by"Configure shodan with your api key before running "$bye"
 echo -e "\n"
 echo -e "$by"[INFO] Starting scan for IPs "$bye"
-shodan search "ssl:.$1  200" --fields ip_str | tee IPs.txt 
+shodan search "hostname:.$1  200" --fields ip_str | tee IPs.txt 
 echo -e "\n"
 echo -e "$by"[INFO] All IPs are saved in file: IPs.txt "$bye"
 echo -e "\n"
