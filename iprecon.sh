@@ -53,7 +53,7 @@ cat forRust1.txt | sed '$s/,$//' | tee forRust.txt
 echo -e "\n"
 echo -e "$by"[INFO] Ready for rustscan with file: forRust.txt "$bye"
 echo -e "\n"
-rustscan -a forRust.txt -r 1-65535 --ulimit 5000 | grep Open | tee open_ports.txt 
+rustscan -a forRust.txt -r 1-65535 --ulimit 5000 --scripts none | grep Open | tee open_ports.txt 
 echo -e "\n"
 echo -e "$by"[INFO] Ready for nuclei with file: open_ports.txt "$bye"
 echo -e "\n"
