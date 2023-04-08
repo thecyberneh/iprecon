@@ -47,7 +47,7 @@ echo -e "\n"
 cat IPs.txt | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | tee forRust.txt
 echo -e "\n"
 echo -e "$by"[INFO] Scanning for open ports "$bye"
-rustscan -a forRust.txt -r 1-65535 --ulimit 5000 --scripts none | tee rustscanRes.txt
+rustscan -a 'forRust.txt' -r 1-65535 --ulimit 5000 --scripts none | tee rustscanRes.txt
 echo -e "\n"
 cat rustscanRes.txt | grep Open | tee open_ports.txt 
 echo -e "\n"
